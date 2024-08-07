@@ -10,11 +10,11 @@ export class AuthService {
 
   constructor(private router: Router) { }
 
-  login(email: string, password: string): boolean {
-    if(email === "dimas@gmail.com" && password === "dimasfoguete"){
+  login(data: any): boolean {
+    if(data.email === "dimas@gmail.com" && data.password === "dimasfoguete"){
       this.isLoggedIn = true;
       this.router.navigate(['home'])
-      return this.isLoggedIn;
+      return true;
     }
     return false;
   }
